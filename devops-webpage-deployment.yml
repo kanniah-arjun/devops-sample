@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: miracle-devops-webpage-deployment
+  name: devops-webpage-deployment
   labels:
-    app: miracle-devops-webpage-app
+    app: devops-webpage-app
     type: html-front-end
 spec:
   template:
     metadata:
-      name: miracle-devops-webpage-pod
+      name: devops-webpage-pod
       labels:
-        app: miracle-devops-webpage-app
+        app: devops-webpage-app
         type: html-front-end
     spec:
       containers:
-        - name: miracle-devops-webpage-container
+        - name: devops-webpage-container
           image: akanniah/miracle-devops-webpage
           ports:
             - containerPort: 8080
@@ -22,4 +22,4 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: miracle-devops-webpage-app
+      app: devops-webpage-app
